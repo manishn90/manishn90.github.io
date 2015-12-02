@@ -1,0 +1,166 @@
+html,
+body,
+.row,
+.col {
+    height: 100%;
+}
+
+.navbar-default {
+    background: #fff!important;
+    border: 0px!important;
+    margin: 0!important;
+}
+.navbar-brand{
+	width: 80px
+}
+.navbar-default img{
+ 	width: 100%;
+}
+.container-landing {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+.video-phone {
+    background: url(../img/iphone.png) no-repeat 0 0;
+    width: 324px;
+    height: 664px;
+    padding: 100px 21px 95px 25px;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -100px;
+}
+
+.video-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+#phone-video {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#left-content {
+    height: 100%;
+    display: table;
+    position: absolute;
+    top: -107px;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+h2 {
+    font-size: 44px!important;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+}
+
+.input-group {
+    display: block!important;
+}
+
+.input-group input,
+.input-group button {
+    border-radius: 9px!important;
+    height: 50px;
+}
+
+.input-group input {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f5f4f4;
+    border-color: :#f5f4f4;
+}
+
+.input-group button {
+    width: 150px;
+    background-color: #C8DCC3;
+    color: #2b2b2b;
+    border-color: #C8DCC3;
+    font-weight: bold;
+}
+
+#form-input {
+    margin: 40px 0
+}
+
+.p-l-0 {
+    padding-left: 0px!important
+}
+
+.p-r-0 {
+    padding-right: 0px!important
+}
+
+@media (min-width: 991px) {
+    .col-form {
+        position: relative;
+        top: -470px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-default {
+        display: none;
+    }
+    h2 {
+        font-size: 26px!important;
+        text-align: center;
+        word-spacing: 2px;
+    }
+    p {
+        font-size: 18px;
+        text-align: center;
+    }
+    .col {
+        height: auto;
+    }
+    #left-content {
+        height: auto;
+        position: relative;
+        top: 0;
+        padding: 28px 0;
+    }
+    .video-phone {
+        position: relative;
+        top: 0;
+    }
+    .input-group input,
+    .input-group button {
+        margin: 10px 0;
+    }
+    .input-group button {
+        width: 100%;
+    }
+    #form-input {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .p-l-0 {
+        padding-left: 15px!important;
+    }
+    .p-r-0 {
+        padding-right: 15px!important;
+    }
+}
