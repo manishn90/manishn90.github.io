@@ -4,41 +4,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/tympanus/component.css" />
+<link rel="stylesheet" type="text/css" href="css/tympanus/animations.css" />
+<script src="js/tympanus/js/modernizr.custom.js"></script>
+<script src="//cdn.optimizely.com/js/4551850277.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
 
 <body>
-    <div class="bg-img"></div>
-    <div class="bg-color"></div>
-    <div class="container">
-        <div class="outer" style="width:auto;margin:auto">
-            <div class="middle">
-                <div class="modal-container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="logo">
-                                <img src="images/logo-black.png">
-                            </div>
-                            <h1>Stay In,Eat Pizza</h1>
-                            <p style="text-align: center;">Slice app is the easiest way to order gourmet pizza to jakarta&#39;s cbd. Pizza is just a few taps away.</p>
-                            <form accept-charset="UTF-8" action="https://formkeep.com/f/aa0255a83f33" method="POST">
-                                <input type="hidden" name="utf8" value="✓">
-                                <div class="input-group" style="margin: 20px 0;">
-                                    <div class="input-group-addon" id="sizing-addon1">+62</div>
-                                    <input type="tel" class="form-control phone-number" id="phone" placeholder="phone number" aria-label="...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-secondary envelope-2" type="submit"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></button>
-                                    </span>
+    <!-- /triggers -->
+    <div id="pt-main" class="pt-perspective">
+        <div class="pt-page pt-page-1">
+            <div class="bg-img"></div>
+            <div class="bg-color"></div>
+            <div class="container">
+                <div class="outer" style="width:auto;margin:auto">
+                    <div class="middle">
+                        <div class="modal-container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="logo">
+                                        <img src="images/logo-black.png">
+                                    </div>
+                                    <h1>Stay In,Eat Pizza</h1>
+                                    <p style="text-align: center;">Slice app is the easiest way to order gourmet pizza to jakarta&#39;s cbd. Pizza is just a few taps away.</p>
+                                    <div class="input-group" style="margin: 20px 0;">
+                                        <div class="input-group-addon" id="sizing-addon1">+62</div>
+                                        <input type="tel" class="form-control phone-number" id="phone" placeholder="phone number" aria-label="...">
+                                        <span class="input-group-btn">
+                                            <div class="pt-triggers">
+                                                <div id="dl-menu" class="dl-menuwrapper">
+                                                    <ul class="dl-menu" style="opacity:1;    pointer-events:visible;">
+                                                        <li data-animation="19" style="    height: 64px;">
+                                                            <button class="btn btn-secondary envelope-2" type="submit">
+                                                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                </div>
+                                                <!-- /dl-menu-wrapper-->
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <button class="btn btn-default submit-btn" data-toggle="modal" data-target="#myModal" style="background:#ffe870; color:#000;border-color:#ffe870">SUBMIT</button>
                                 </div>
-                                <button class="btn btn-default submit-btn" data-toggle="modal" data-target="#myModal" style="background:#ffe870; color:#000;border-color:#ffe870">SUBMIT</button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="pt-page pt-page-2">
+            <div class="pt-triggers">
+                <div id="dl-menu" class="dl-menuwrapper">
+                    <button class="dl-trigger">Choose a transition</button>
+                    <ul class="dl-menu">
+                        <li>
+                            <a href="#">Scale</a>
+                            <ul class="dl-submenu">
+                                <li data-animation="19"><a href="#">Scale down / from bottom</a></li>
+                                <li data-animation="20"><a href="#">Scale down / from top</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /dl-menu-wrapper-->
+            </div>
+        </div>
     </div>
+    <div class="pt-message">
+        <p>Your browser does not support CSS animations.</p>
     </div>
+    <script src="js/tympanus/js/jquery.dlmenu.js"></script>
+    <script src="js/tympanus/js/pagetransitions.js"></script>
 </body>
 
 </html>
