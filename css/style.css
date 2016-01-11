@@ -1,21 +1,19 @@
-html,
-body,
-.row,
-.col {
-    height: 100%;
+@font-face{
+    font-family: 'ProximaNova';
+    src: url('../fonts/montserrat/Montserrat-Regular.otf');
 }
 
-.single-photo__gradient-overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    background: transparent;
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.7) 100%);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.7) 100%);
+@font-face{
+    font-family: 'BebasNeue';
+    src: url('../fonts/bebas/BebasNeue_Regular.otf');
 }
 
+body{
+    color: #fff;
+    font-family: 'ProximaNova';
+}
 .bg-img {
-    background-image: url(../img/bg.jpeg);
+    background-image: url(../images/bg.jpeg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -28,254 +26,184 @@ body,
     left: 0;
 }
 
-.navbar-default {
-    background: transparent!important;
-    border: 0px!important;
-    margin: 0!important;
-}
-
-.navbar-brand {
-    width: 200px;
-    position: relative;
-    left: 30px;
-    top: 30px;
-}
-
-.navbar-default img {
-    width: 100%;
-}
-
-.container-landing {
-    width: 80%;
-    height: 100%;
-    margin: auto;
-}
-
-.video-phone {
-    background: url(../img/iphone.png) no-repeat 0 0;
-    width: 324px;
-    height: 664px;
-    padding: 80px 24px 90px 25px;
-    display: inline-block;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: -100px;
-}
-
-.video-wrap {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: block;
-    overflow: hidden;
-}
-
-#phone-video {
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-#left-content {
-    height: 100%;
+.outer{
     display: table;
-    position: absolute;
-    top: -107px;
+    height: 100%;
+    width: 100%;
 }
 
-.middle {
+.middle{
     display: table-cell;
     vertical-align: middle;
 }
 
-h2 {
-    font-size: 44px!important;
-    color: #fff!important;
+.btn-box{
+    width: 100%;
+    position: absolute;
+    bottom: 0
 }
 
-p {
-    color: rgba(0, 0, 0, 0.3);
-    font-size: 24px;
+.btn-box button{
+    width: 100%;
+    background:#000;
     color: #fff;
+    border-radius: 0;
+    border-color: #000;
+    margin: 0;
+    height: 70px;
+    font-size: 25px;
+    font-family: 'BebasNeue';
 }
 
-.input-group {
-    display: block!important;
+.btn-box button:hover,
+.btn-box button:focus{
+    background:#000;
+    color: #fff;
+    border-color: #000;
 }
 
-.input-group input,
-.input-group button {
-    border-radius: 9px!important;
-    height: 50px;
-}
-
-.input-group input {
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #f5f4f4;
-    border-color: : #f5f4f4;
-}
-
-.input-group button {
-    width: 150px;
-    background-color: #C8DCC3;
-    color: #2b2b2b;
-    border-color: #C8DCC3;
-    font-weight: bold;
-}
-
-#form-input {
-    margin: 40px 0
-}
-
-.p-l-0 {
-    padding-left: 0px!important
-}
-
-.p-r-0 {
-    padding-right: 0px!important
-}
-
-#phone-video-slide {
+.container h2{
+    text-transform: capitalize;
+    font-family: 'BebasNeue';
+    font-size: 60px;
+    font-weight: 600;
     background: #000;
-    height: 100%;
+    display: table;
+    box-shadow: 11px 0 0 #000000 , -11px 0 0 #000000;
+    line-height: 90px;
+    margin: 0;
+}
+.container p{
+    font-size: 20px;
+    background: #000;
+    display: inline;
+    box-shadow: 11px 0 0 #000000 , -11px 0 0 #000000;
+    line-height: 35px;
+    padding: 8px 8px 8px 0;
+    position: relative;
+    top: 17px
 }
 
-.slide {
+.single-photo__gradient-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: transparent;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.modal-dialog{
+    margin: 0;
+    width: 100%;
+}
+
+.modal-content{
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: #000;
+    border-radius: 0;
+}
+.modal-header{
+    border:0;
+    position: absolute;
+    width: 100%;
+    z-index: 10
 }
 
-.slide1 {
-    background-image: url(../img/slide1.jpg);
+.close{
+        color: #fff;
+    opacity: 1;
+    font-size: 37px;
 }
 
-.slide2 {
-    background-image: url(../img/slide2.jpg);
+.input-group{
+    width: 100%;
 }
 
-.slide3 {
-    background-image: url(../img/slide3.jpg);
+.btn{
+    width: 100%;
 }
 
-.slide4 {
-    background-image: url(../img/slide4.jpg);
+.submit-btn{
+    font-family: 'BebasNeue';
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    height: 47px;
+}
+.phone-number{
+        background: #252525;
+    border-color: #252525;
+    height: 42px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 4px;
 }
 
-.slide5 {
-    background-image: url(../img/slide5.jpg);
+.logo{
+    width: 135px;
+    position: absolute;
+    top: 45px;
 }
 
-.slide6 {
-    background-image: url(../img/slide6.jpg);
+.logo img{
+    width: 100%;
 }
 
-.slide7 {
-    background-image: url(../img/slide7.jpg);
+.phone-number::-webkit-input-placeholder {
+    color:    #4f4f4f;
+    letter-spacing: 1px;
+}
+.phone-number:-moz-placeholder {
+    color:    #4f4f4f;
+    letter-spacing: 1px;
+}
+.phone-number::-moz-placeholder {
+    color:    #4f4f4f;
+    letter-spacing: 1px;
+}
+.phone-number:-ms-input-placeholder {
+    color:    #4f4f4f;
+    letter-spacing: 1px;
 }
 
-.slick-list,
-.slick-track {
-    height: 100%;
+.modal-container{
+    text-align: center;
 }
 
-@media (min-width: 991px) {
-    body {
-        overflow: hidden;
-    }
-    .col-form {
-        position: relative;
-        top: -470px;
-    }
-    #phone-video {
-        display: block;
-    }
-    #phone-video-slide {
-        display: none;
+.modal-container p{
+    background: transparent;
+    display: block;
+    box-shadow: none;
+    line-height: normal;
+    padding: 0;
+    position: relative;
+    top: 0;
+        padding-bottom: 20px;
+}
+
+@media (min-width: 768px){
+    .modal-container{
+        margin: auto;
+        width: 390px;
     }
 }
 
-@media (max-width: 991px) {
-    body {
-        overflow: visible;
-    }
-    .col-form {
-        padding-bottom: 25px;
-    }
-    #phone-video {
-        display: none;
-    }
-    #phone-video-slide {
-        display: block;
-        margin: 0;
-        padding: 0;
-    }
-    .navbar-default {
-        display: none;
-    }
-    h2 {
-        font-size: 26px!important;
-        text-align: center;
-        word-spacing: 2px;
-    }
-    p {
-        font-size: 18px;
-        text-align: center;
-    }
-    .col {
-        height: auto;
-    }
-    #left-content {
+@media (max-width: 768px){
+    .container p{
         width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
-        padding: 28px 0;
+        font-size: 14px;
     }
-    .video-phone {
-        position: relative;
-        top: 0;
-        display: block;
-    }
-    .input-group input,
-    .input-group button {
-        margin: 10px 0;
-    }
-    .input-group button {
+    .modal-container{
         width: 100%;
     }
-    #form-input {
-        margin: 10px 0;
+    .container h2{
+        font-size: 30px;
+        line-height: 55px;
     }
-}
 
-@media (max-width: 768px) {
-    .p-l-0 {
-        padding-left: 15px!important;
-    }
-    .p-r-0 {
-        padding-right: 15px!important;
-    }
-    .video-phone {
-        background-image: url(../img/iphone-mobile.png);
-        width: 225px;
-        height: 457px;
-        padding: 60px 25px 65px 25px;
-    }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px)and (-webkit-min-device-pixel-ratio: 2) {
-    .bg-img {
-        left: 50%;
-        margin-left: -512px;
+    .modal-container p{
+        font-size: 20px;
     }
 }
