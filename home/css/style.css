@@ -276,6 +276,45 @@ button.envelope-2 span {
     font-size: 25px;
 }
 
+.success-box {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    height: 60px;
+    text-align: center;
+}
+
+
+.success-box.open,
+.success-box.close {
+    -webkit-animation-name: animSlideTop;
+    animation-name: animSlideTop;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: cubic-bezier(0.7,0,0.3,1);
+    animation-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+@-webkit-keyframes animSlideTop {
+    0% { 
+        -webkit-transform: translate3d(0,100%,0); 
+    }
+    100% { 
+        -webkit-transform: translate3d(0,0,0); 
+    }
+}
+
+@keyframes animSlideTop {
+    0% { 
+        -webkit-transform: translate3d(0,100%,0); 
+        transform: translate3d(0,100%,0); 
+    }
+    100% { 
+        -webkit-transform: translate3d(0,0,0); 
+        transform: translate3d(0,0,0); }
+}
+
 @media (min-width: 768px) {
     .modal-container {
         margin: auto;

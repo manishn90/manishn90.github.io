@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="//cdn.optimizely.com/js/4551850277.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
 
@@ -21,37 +22,94 @@
                             </div>
                             <h1>Stay In,Eat Pizza</h1>
                             <p style="text-align: center;">Slice app is the easiest way to order gourmet pizza to jakarta&#39;s cbd. Pizza is just a few taps away.</p>
-                            <span id="form-container">
-                                <input type="hidden" name="utf8" value="✓">
-                                <div class="input-group" style="margin: 20px 0;">
-                                    <div class="input-group-addon" id="sizing-addon1">+62</div>
-                                    <input type="tel" class="form-control phone-number" id="phone" placeholder="phone number" aria-label="...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-secondary envelope-2" type="submit"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></button>
-                                    </span>
-                                </div>
-                                <button id="submit" class="btn btn-default submit-btn" style="background:#ffe870; color:#000;border-color:#ffe870">SUBMIT</button>
-                            </span>
+                            <div class="input-group" style="margin: 20px 0;">
+                                <div class="input-group-addon" id="sizing-addon1">+62</div>
+                                <input type="tel" class="form-control phone-number" id="phone" placeholder="phone number" aria-label="...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary envelope-2" id="submit-desktop" type="submit">
+                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                </button>
+                                </span>
+                            </div>
+                            <button class="btn btn-default submit-btn" id="submit-mobile" data-toggle="modal" data-target="#myModal" style="background:#ffe870; color:#000;border-color:#ffe870">SUBMIT</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="success-box" style="display:none;">
+        <div class="outer">
+            <div class="middle">
+                <p id="status-container"></p>
+            </div>
+        </div>
     </div>
     <script>
     $(function() {
         // sending data to server
-        $("#submit").click(function() {
-            var phoneNumber = $('#phone').val();
-            $.getJSON("http://api.phone-validator.net/api/v2/verify?PhoneNumber=0" + phoneNumber + "&CountryCode=id&APIKey=pv-5b5fd3433b0b901b9c57978a791061d4", function(response) {
-                alert(phoneNumber, response);
-            });
+        $("#submit-desktop, #submit-mobile").click(function() {
+            //$('.success-box').hide();
 
-            /*$.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phoneNumber, function(data) {
-                var html = '<p style="text-align: center;">Thank You<br> We will contact you soon.</p>';
-                $('#form-container').html(html);
-            });*/
+            function sendNumber(phone) {
+                $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
+                    var html = 'Thank You. We will upadate you soon.';
+                    $('#status-container').text(html);
+                    $('.success-box').show();
+                });
+            }
+
+            if ($('#phone').val() == '') {
+                var html = 'Please enter your phone number.';
+                $('#status-container').text(html);
+                $('.success-box').show();
+            } else {
+                // send API request
+                var PhoneNumber = $('#phone').val(),
+                    CountryCode = 'id',
+                    Locale = 'id-ID';
+
+                $.ajax({
+                    url: 'http://api.phone-validator.net/api/v2/verify',
+                    type: 'POST',
+                    data: {
+                        PhoneNumber: PhoneNumber,
+                        CountryCode: CountryCode,
+                        Locale: Locale,
+                        APIKey: 'pv-5b5fd3433b0b901b9c57978a791061d4'
+                    },
+                    dataType: 'json',
+                    success: function(json) {
+                        // check API result
+                        if (typeof(json.status) != "undefined") {
+                            statuscode = json.status;
+                            switch (statuscode) {
+                                case "VALID_CONFIRMED":
+                                    //console.log(json);
+                                    sendNumber(PhoneNumber);
+                                    break;
+                                case "VALID_UNCONFIRMED":
+                                    linetype = json.linetype;
+                                    location = json.location;
+                                    countrycode = json.countrycode;
+                                    formatnational = json.formatnational;
+                                    formatinternational = json.formatinternational;
+                                    //console.log(json);
+                                    sendNumber(PhoneNumber);
+                                    break;
+                                case "INVALID":
+                                    var html = 'This phone number is not valid. Please enter a valid one.';
+                                    $('#status-container').text(html);
+                                    $('.success-box').show();
+                                    break;
+                                default:
+                            }
+                        }
+                    }
+                })
+            }
+
+
         })
     });
     </script>
