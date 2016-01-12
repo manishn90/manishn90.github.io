@@ -218,6 +218,7 @@ body {
 
 .modal-container {
     text-align: center;
+    padding: 40px 0;
 }
 
 .modal-container h1 {
@@ -286,7 +287,6 @@ button.envelope-2 span {
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 0, 0);
     display: none;
-
 }
 
 .success-box.open,
@@ -320,6 +320,17 @@ button.envelope-2 span {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
+}
+
+
+
+.success-box .close {
+    color: #fff;
+    opacity: 1;
+    font-size: 12px;
+    position: relative;
+    top: -8px;
+    right: 8px;
 }
 
 @media (min-width: 768px) {

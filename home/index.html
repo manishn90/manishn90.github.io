@@ -38,9 +38,12 @@
             </div>
         </div>
     </div>
-    <div class="success-box" style="display:none;">
+    <div class="success-box">
         <div class="outer">
             <div class="middle">
+                <!--<div class="close">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </div>-->
                 <p id="status-container"></p>
             </div>
         </div>
@@ -49,25 +52,28 @@
     $(function() {
         // sending data to server
         $("#submit-desktop, #submit-mobile").click(function() {
-            //$('.success-box').hide();
+
 
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
                     var html = 'Thank You. We will upadate you soon.';
                     $('#status-container').text(html);
-                    $('.success-box').show();
+                    $('.success-box').addClass('open');
                 });
             }
 
             if ($('#phone').val() == '') {
                 var html = 'Please enter your phone number.';
                 $('#status-container').text(html);
-                $('.success-box').show();
+                $('.success-box').addClass('open');
             } else {
                 // send API request
                 var PhoneNumber = $('#phone').val(),
                     CountryCode = 'id',
                     Locale = 'id-ID';
+
+                    PhoneNumber = PhoneNumber.replace(/^0+/, '');
+                    console.log(PhoneNumber);
 
                 $.ajax({
                     url: 'http://api.phone-validator.net/api/v2/verify',
@@ -100,7 +106,7 @@
                                 case "INVALID":
                                     var html = 'This phone number is not valid. Please enter a valid one.';
                                     $('#status-container').text(html);
-                                    $('.success-box').show();
+                                    $('.success-box').addClass('open');
                                     break;
                                 default:
                             }
