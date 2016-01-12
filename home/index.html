@@ -44,10 +44,14 @@
         // sending data to server
         $("#submit").click(function() {
             var phoneNumber = $('#phone').val();
-            $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phoneNumber, function(data) {
+            $.getJSON("http://api.phone-validator.net/api/v2/verify?PhoneNumber=0" + phoneNumber + "&CountryCode=id&APIKey=pv-5b5fd3433b0b901b9c57978a791061d4", function(response) {
+                alert(phoneNumber, response);
+            });
+
+            /*$.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phoneNumber, function(data) {
                 var html = '<p style="text-align: center;">Thank You<br> We will contact you soon.</p>';
                 $('#form-container').html(html);
-            });
+            });*/
         })
     });
     </script>
