@@ -56,7 +56,7 @@
 
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
-                    var html = 'Thank You. We will upadate you soon.';
+                    var html = 'Thank You. We will update you soon.';
                     $('#status-container').text(html);
                     $('.success-box').addClass('open');
                 });

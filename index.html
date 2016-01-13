@@ -59,19 +59,86 @@
                             </div>
                         </div>
                     </div>
+                    <div class="success-box">
+                        <div class="outer">
+                            <div class="middle">
+                                <!--<div class="close">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </div>-->
+                                <p id="status-container"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
     $(function() {
-        // sending data to server
         $("#submit").click(function() {
-            var phoneNumber = $('#phone').val();
-            $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phoneNumber, function(data) {
-                var html = '<p style="text-align: center;">Thank You<br> We will contact you soon.</p>';
-                $('#modal-content').html(html);
-            });
+
+            function sendNumber(phone) {
+                $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
+                    var html = 'Thank You. We will update you soon.';
+                    $('#status-container').text(html);
+                    $('.success-box').addClass('open');
+                });
+            }
+
+            if ($('#phone').val() == '') {
+                var html = 'Please enter your phone number.';
+                $('#status-container').text(html);
+                $('.success-box').addClass('open');
+            } else {
+                // send API request
+                var PhoneNumber = $('#phone').val(),
+                    CountryCode = 'id',
+                    Locale = 'id-ID';
+
+                PhoneNumber = PhoneNumber.replace(/^0+/, '');
+                console.log(PhoneNumber);
+
+                $.ajax({
+                    url: 'http://api.phone-validator.net/api/v2/verify',
+                    type: 'POST',
+                    data: {
+                        PhoneNumber: PhoneNumber,
+                        CountryCode: CountryCode,
+                        Locale: Locale,
+                        APIKey: 'pv-5b5fd3433b0b901b9c57978a791061d4'
+                    },
+                    dataType: 'json',
+                    success: function(json) {
+                        // check API result
+                        if (typeof(json.status) != "undefined") {
+                            statuscode = json.status;
+                            switch (statuscode) {
+                                case "VALID_CONFIRMED":
+                                    //console.log(json);
+                                    sendNumber(PhoneNumber);
+                                    break;
+                                case "VALID_UNCONFIRMED":
+                                    linetype = json.linetype;
+                                    location = json.location;
+                                    countrycode = json.countrycode;
+                                    formatnational = json.formatnational;
+                                    formatinternational = json.formatinternational;
+                                    //console.log(json);
+                                    sendNumber(PhoneNumber);
+                                    break;
+                                case "INVALID":
+                                    var html = 'This phone number is not valid. Please enter a valid one.';
+                                    $('#status-container').text(html);
+                                    $('.success-box').addClass('open');
+                                    break;
+                                default:
+                            }
+                        }
+                    }
+                })
+            }
+
+
         })
     });
     </script>
