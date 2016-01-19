@@ -4,9 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
 <script src="//cdn.optimizely.com/js/4551850277.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/social-share-kit.js"></script>
 
 <body>
     <div class="bg-img"></div>
@@ -32,6 +34,16 @@
                                 </span>
                             </div>
                             <button class="btn btn-default submit-btn" id="submit-mobile" data-toggle="modal" data-target="#myModal" style="background:#ffe870; color:#000;border-color:#ffe870">SUBMIT</button>
+                            <div class="row" style="padding-top:50px;">
+                                <div class="col-md-12">
+                                    <p class="subtitle">Share to your friends and family..</p>
+                                    <div class="ssk-group ssk-lg">
+                                        <a href="" class="ssk ssk-facebook"></a>
+                                        <a href="" class="ssk ssk-twitter"></a>
+                                        <a href="" class="ssk ssk-google-plus"></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,6 +62,9 @@
     </div>
     <script>
     $(function() {
+        // Social share plugin
+        SocialShareKit.init();
+
         // sending data to server
         $("#submit-desktop, #submit-mobile").click(function() {
 

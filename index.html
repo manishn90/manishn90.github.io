@@ -4,8 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/social-share-kit.js"></script>
 
 <body>
     <div class="bg-img"></div>
@@ -23,6 +25,16 @@
                             <br>
                             <b>gourmet pizza</b> to Jakarta&#39;s cbd.
                             <br> Pizza is just a few taps away.</p>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:50px;">
+                    <div class="col-md-12">
+                        <p>Share to your friends and family:</p>
+                        <div class="ssk-group ssk-lg" style="padding-top:25px;">
+                            <a href="" class="ssk ssk-facebook"></a>
+                            <a href="" class="ssk ssk-twitter"></a>
+                            <a href="" class="ssk ssk-google-plus"></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,6 +87,9 @@
     </div>
     <script>
     $(function() {
+        // Social share plugin
+        SocialShareKit.init();
+
         $("#submit").click(function() {
 
             function sendNumber(phone) {
