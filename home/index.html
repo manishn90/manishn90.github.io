@@ -56,7 +56,12 @@
 
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
-                    var html = 'Thank You. We will update you soon.';
+                    if (data.success == true) {
+                        var html = 'Thank you for signing up. You have been waitlisted, your number is ' + data.number;
+                    } else {
+                        var html = data.message;
+                    }
+
                     $('#status-container').text(html);
                     $('.success-box').addClass('open');
                 });
