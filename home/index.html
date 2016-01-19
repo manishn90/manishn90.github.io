@@ -48,17 +48,44 @@
             </div>
         </div>
     </div>
+    <div class="thanks-box">
+        <div class="outer">
+            <div class="middle">
+                <div class="box">
+                    <div class="logo">
+                        <img src="images/logo-black.png">
+                    </div>
+                    <h2>THANK YOU :)</h2>
+                    <p>for sign up.
+                        <br>We will give an updates later.
+                    </p>
+                    <button class="btn btn-default go-back">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
     $(function() {
         // sending data to server
+        $('.go-back').click(function() {
+            $('.thanks-box').removeClass('open');
+            $('.bg-color').css('background', '#ffd306');
+            $('.container').show();
+            $('.success-box').hide();
+            $('#phone').val();
+        });
+
         $("#submit-desktop, #submit-mobile").click(function() {
 
 
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
                     var html = 'Thank You. We will update you soon.';
-                    $('#status-container').text(html);
-                    $('.success-box').addClass('open');
+                    //$('#status-container').text(html);
+                    $('.thanks-box').addClass('open');
+                    $('.bg-color').css('background', '#fff');
+                    $('.container').hide();
+                    $('.success-box').hide();
                 });
             }
 
@@ -72,8 +99,8 @@
                     CountryCode = 'id',
                     Locale = 'id-ID';
 
-                    PhoneNumber = PhoneNumber.replace(/^0+/, '');
-                    console.log(PhoneNumber);
+                PhoneNumber = PhoneNumber.replace(/^0+/, '');
+                console.log(PhoneNumber);
 
                 $.ajax({
                     url: 'http://api.phone-validator.net/api/v2/verify',

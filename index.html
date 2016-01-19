@@ -69,6 +69,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="thanks-box">
+                        <div class="outer">
+                            <div class="middle">
+                                <div class="box">
+                                    <div class="circle-box">
+                                        <h2>THANKS</h2>
+                                    </div>
+                                    
+                                    <p>for sign up.
+                                        <br>We will give an updates later.
+                                    </p>
+                                    <button class="btn btn-default go-back" data-dismiss="modal" aria-label="Close">Home</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,8 +96,8 @@
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
                     var html = 'Thank You. We will update you soon.';
-                    $('#status-container').text(html);
-                    $('.success-box').addClass('open');
+                    $('.thanks-box').addClass('open');
+                    $('.success-box').hide();
                 });
             }
 

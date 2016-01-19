@@ -322,8 +322,6 @@ button.envelope-2 span {
     }
 }
 
-
-
 .success-box .close {
     color: #fff;
     opacity: 1;
@@ -333,6 +331,63 @@ button.envelope-2 span {
     right: 8px;
 }
 
+.thanks-box {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    pointer-events: none;
+}
+
+.thanks-box .logo {
+    width: 100px;
+}
+
+.thanks-box h2 {
+    font-size: 3.5em;
+    margin: 50px 0 30px 0;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.thanks-box p {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+.thanks-box button {
+    width: 140px;
+    height: 52px;
+    margin: 45px 0;
+    background: #000;
+    color: #ffd306;
+    border-color: #ffd306;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.thanks-box .box {
+    color: #000;
+    width: 900px;
+    height: 400px;
+    background: #ffd306;
+    margin: auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 40px 0;
+    z-index: 10;
+}
+
+.thanks-box.open {
+    opacity: 1;
+    top: 1;
+    pointer-events: visible;
+}
 
 @media (min-width: 768px) {
     .modal-container {
@@ -345,6 +400,20 @@ button.envelope-2 span {
 }
 
 @media (max-width: 768px) {
+    .thanks-box {
+        background: #ffd306;
+    }
+    .thanks-box .box {
+        width: 100%;
+    }
+
+    .thanks-box h2{
+        font-size: 1.5em;
+    }
+
+    .thanks-box p{
+        font-size:1em 
+    }
     .input-group-btn {
         display: none;
     }
