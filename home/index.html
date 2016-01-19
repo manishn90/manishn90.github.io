@@ -53,7 +53,6 @@
         // sending data to server
         $("#submit-desktop, #submit-mobile").click(function() {
 
-
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
                     if (data.success == true) {
@@ -77,8 +76,9 @@
                     CountryCode = 'id',
                     Locale = 'id-ID';
 
-                    PhoneNumber = PhoneNumber.replace(/^0+/, '');
-                    console.log(PhoneNumber);
+                PhoneNumber = PhoneNumber.replace(/^0+/, '');
+
+                $('.success-box').removeClass('open');
 
                 $.ajax({
                     url: 'http://api.phone-validator.net/api/v2/verify',

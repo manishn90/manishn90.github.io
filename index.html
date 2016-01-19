@@ -101,7 +101,8 @@
                     Locale = 'id-ID';
 
                 PhoneNumber = PhoneNumber.replace(/^0+/, '');
-                console.log(PhoneNumber);
+
+                $('.success-box').removeClass('open');
 
                 $.ajax({
                     url: 'http://api.phone-validator.net/api/v2/verify',
