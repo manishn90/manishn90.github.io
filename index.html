@@ -4,8 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/social-share-kit.js"></script>
 
 <body>
     <div class="bg-img"></div>
@@ -21,10 +23,20 @@
                         <h2>STAY IN, EAT PIZZA</h2>
                         <p>Slice app is the easiest way to order
                             <br>
-                            <b>gourmet pizza</b> to jakarta&#39;s cbd.
+                            <b>gourmet pizza</b> to Jakarta&#39;s cbd.
                             <br> Pizza is just a few taps away.</p>
                     </div>
                 </div>
+                <!--<div class="row" style="padding-top:50px;">
+                    <div class="col-md-12">
+                        <p>Share to your friends and family:</p>
+                        <div class="ssk-group ssk-lg" style="padding-top:25px;">
+                            <a href="" class="ssk ssk-facebook"></a>
+                            <a href="" class="ssk ssk-twitter"></a>
+                            <a href="" class="ssk ssk-google-plus"></a>
+                        </div>
+                    </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -77,8 +89,7 @@
                                         <h2>THANKS</h2>
                                     </div>
                                     
-                                    <p>for sign up.
-                                        <br>We will give an updates later.
+                                    <p>
                                     </p>
                                     <button class="btn btn-default go-back" data-dismiss="modal" aria-label="Close">Home</button>
                                 </div>
@@ -91,13 +102,24 @@
     </div>
     <script>
     $(function() {
+        // Social share plugin
+        SocialShareKit.init();
+
         $("#submit").click(function() {
 
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
-                    var html = 'Thank You. We will update you soon.';
+
+                    if (data.success == true) {
+                        var html = 'thank you for signing up. You have been waitlisted, your number is #' + data.number;
+                    } else {
+                        var html = data.message;
+                    }
+
+                    $('.thanks-box p').text(html);
                     $('.thanks-box').addClass('open');
                     $('.success-box').hide();
+
                 });
             }
 
@@ -112,7 +134,8 @@
                     Locale = 'id-ID';
 
                 PhoneNumber = PhoneNumber.replace(/^0+/, '');
-                console.log(PhoneNumber);
+
+                $('.success-box').removeClass('open');
 
                 $.ajax({
                     url: 'http://api.phone-validator.net/api/v2/verify',

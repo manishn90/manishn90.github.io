@@ -83,7 +83,9 @@ body {
     line-height: 35px;
     padding: 8px 8px 8px 0;
     position: relative;
-    top: 17px
+    top: 17px;
+    width: 400px;
+    margin: auto;
 }
 
 .single-photo__gradient-overlay {
@@ -321,7 +323,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .thanks-box .box{
+    .thanks-box .box {
         width: 100%;
     }
     .container p {

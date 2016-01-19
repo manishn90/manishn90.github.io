@@ -4,9 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
 <script src="//cdn.optimizely.com/js/4551850277.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/social-share-kit.js"></script>
 
 <body>
     <div class="bg-img"></div>
@@ -21,7 +23,7 @@
                                 <img src="images/logo-black.png">
                             </div>
                             <h1>Stay In,Eat Pizza</h1>
-                            <p style="text-align: center;">Slice app is the easiest way to order gourmet pizza to jakarta&#39;s cbd. Pizza is just a few taps away.</p>
+                            <p style="text-align: center;">Slice app is the easiest way to order gourmet pizza to Jakarta&#39;s cbd. Pizza is just a few taps away.</p>
                             <div class="input-group" style="margin: 20px 0;">
                                 <div class="input-group-addon" id="sizing-addon1">+62</div>
                                 <input type="tel" class="form-control phone-number" id="phone" placeholder="phone number" aria-label="...">
@@ -32,6 +34,16 @@
                                 </span>
                             </div>
                             <button class="btn btn-default submit-btn" id="submit-mobile" data-toggle="modal" data-target="#myModal" style="background:#ffe870; color:#000;border-color:#ffe870">SUBMIT</button>
+                            <!--<div class="row" style="padding-top:50px;">
+                                <div class="col-md-12">
+                                    <p class="subtitle">Share to your friends and family..</p>
+                                    <div class="ssk-group ssk-lg">
+                                        <a href="" class="ssk ssk-facebook"></a>
+                                        <a href="" class="ssk ssk-twitter"></a>
+                                        <a href="" class="ssk ssk-google-plus"></a>
+                                    </div>
+                                </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -56,8 +68,7 @@
                         <img src="images/logo-black.png">
                     </div>
                     <h2>THANK YOU :)</h2>
-                    <p>for sign up.
-                        <br>We will give an updates later.
+                    <p>
                     </p>
                     <button class="btn btn-default go-back">Home</button>
                 </div>
@@ -66,6 +77,9 @@
     </div>
     <script>
     $(function() {
+        // Social share plugin
+        SocialShareKit.init();
+
         // sending data to server
         $('.go-back').click(function() {
             $('.thanks-box').removeClass('open');
@@ -77,15 +91,21 @@
 
         $("#submit-desktop, #submit-mobile").click(function() {
 
-
             function sendNumber(phone) {
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
-                    var html = 'Thank You. We will update you soon.';
+
+                    if (data.success == true) {
+                        var html = 'Thank you for signing up. You have been waitlisted, your number is #' + data.number;
+                    } else {
+                        var html = data.message;
+                    }
                     //$('#status-container').text(html);
+                     $('.thanks-box p').text(html);
                     $('.thanks-box').addClass('open');
                     $('.bg-color').css('background', '#fff');
                     $('.container').hide();
                     $('.success-box').hide();
+
                 });
             }
 
@@ -100,7 +120,7 @@
                     Locale = 'id-ID';
 
                 PhoneNumber = PhoneNumber.replace(/^0+/, '');
-                console.log(PhoneNumber);
+
 
                 $.ajax({
                     url: 'http://api.phone-validator.net/api/v2/verify',
