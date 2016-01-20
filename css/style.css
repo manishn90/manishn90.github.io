@@ -279,7 +279,9 @@ body {
 .thanks-box p {
     font-size: 1em;
     letter-spacing: 2px;
-    padding: 50px 0;
+    padding: 30px 0;
+    width: 500px;
+    margin: auto;
 }
 
 .thanks-box button {
@@ -305,7 +307,7 @@ body {
     top: 0;
     bottom: 0;
     position: absolute;
-    padding: 40px 0;
+    padding: 0;
     z-index: 10;
 }
 
