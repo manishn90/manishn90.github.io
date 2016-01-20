@@ -382,7 +382,7 @@ button.envelope-2 span {
     top: 0;
     bottom: 0;
     position: absolute;
-    padding: 40px 0;
+    padding: 118px 0;
     z-index: 10;
 }
 
@@ -409,13 +409,12 @@ button.envelope-2 span {
     .thanks-box .box {
         width: 100%;
     }
-
-    .thanks-box h2{
+    .thanks-box h2 {
         font-size: 1.5em;
     }
-
-    .thanks-box p{
-        font-size:1em 
+    .thanks-box p {
+        font-size: 1em;
+        width: 100%;
     }
     .input-group-btn {
         display: none;
