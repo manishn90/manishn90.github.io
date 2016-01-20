@@ -6,9 +6,12 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
+<link rel="stylesheet" href="css/ladda-themeless.min.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="js/social-share-kit.js"></script>
+<script type="text/javascript" src="js/ladda.js"></script>
+<script type="text/javascript" src="js/spin.js"></script>
 
 <body>
     <div class="bg-img"></div>
@@ -98,7 +101,8 @@
         // Social share plugin
         SocialShareKit.init();
 
-        $("#submit").click(function() {
+        $("#submit").click(function(e) {
+            e.preventDefault();
 
             function sendNumber(phone) {
                 console.log('Saving number to waitlist... done');
@@ -162,6 +166,7 @@
                                     sendNumber(PhoneNumber);
                                     break;
                                 case "INVALID":
+
                                     var html = 'This phone number is not valid. Please enter a valid one.';
                                     $('#status-container').text(html);
                                     $('.success-box').addClass('open');
