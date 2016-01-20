@@ -338,6 +338,7 @@ button.envelope-2 span {
     height: 100%;
     color: #000;
     pointer-events: none;
+    top: 0;
 }
 
 .thanks-box .logo {
@@ -354,7 +355,7 @@ button.envelope-2 span {
 .thanks-box p {
     font-size: 1.2em;
     letter-spacing: 2px;
-    width: 400px;
+    width: 500px;
     margin: auto;
 }
 
@@ -372,7 +373,7 @@ button.envelope-2 span {
 .thanks-box .box {
     color: #000;
     width: 900px;
-    height: 400px;
+    height: 518px;
     background: #ffd306;
     margin: auto;
     text-align: center;
