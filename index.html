@@ -109,7 +109,7 @@
                 $.getJSON("http://node.colorblindlabs.com:8080/api/access?phone=" + phone, function(data) {
 
                     if (data.success == true) {
-                        var html = 'thank you for signing up. You have been waitlisted, your number is #' + data.number;
+                        var html = 'Thank you for signing up. You have been waitlisted, your number is #' + data.number;
                     } else {
                         var html = data.message;
                     }

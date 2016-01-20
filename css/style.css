@@ -12,6 +12,9 @@ body {
     color: #fff;
     font-family: 'ProximaNova';
 }
+.modal-body{
+    padding: 0
+}
 
 .bg-img {
     background-image: url(../images/bg.jpeg);
@@ -325,8 +328,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    .thanks-box .box {
+    .thanks-box p{
         width: 100%;
+    }
+    .thanks-box .box {
+        width: 95%;
     }
     .container p {
         width: 100%;
