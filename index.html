@@ -4,6 +4,7 @@
     <title>Slice App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="Slice, pizza delivery app">
+    <link rel="icon" type="image/png" href="images/logo-icon.png" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
@@ -117,7 +118,9 @@
     <script>
     $(function() {
         // Social share plugin
-        SocialShareKit.init();
+        SocialShareKit.init({
+            'url': 'http://sliceapp.co/'
+        });
 
         // sending share events to Google
         $('.ga-share-facebook').click(function() {
