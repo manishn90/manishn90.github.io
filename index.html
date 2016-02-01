@@ -4,24 +4,17 @@
     <title>Slice App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="Slice, pizza delivery app">
-    <!-- for Facebook -->
     <link rel="icon" type="image/png" href="images/logo-icon.png" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
     <link rel="stylesheet" href="css/ladda-themeless.min.css" type="text/css">
-
-
-    <meta property="og:site_name" content="Social Share Kit">
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="js/social-share-kit.js"></script>
     <script type="text/javascript" src="js/ladda.js"></script>
     <script type="text/javascript" src="js/spin.js"></script>
     <script src="//cdn.optimizely.com/js/3441870232.js"></script>
-
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -109,8 +102,8 @@
                                     <p id="thankyou-text">
                                     </p>
                                     <p style="padding-top: 0px; padding-bottom: 11px;">Share to your friends and family:</p>
-                                    <div class="ssk-group ssk-lg" data-url="http://sliceapp.co/" style="padding-bottom: 20px;">
-                                        <a href="" class="ssk ssk-facebook" data-url="http://sliceapp.co/"></a>
+                                    <div class="ssk-group ssk-lg" style="padding-bottom: 20px;">
+                                        <a href="" class="ssk ssk-facebook"></a>
                                         <a href="" class="ssk ssk-twitter"></a>
                                         <a href="" class="ssk ssk-google-plus"></a>
                                     </div>
@@ -126,7 +119,7 @@
     $(function() {
         // Social share plugin
         SocialShareKit.init({
-            'url': 'http://sliceapp.co/',
+            url: 'http://sliceapp.co/'
         });
 
         // sending share events to Google
