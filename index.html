@@ -3,6 +3,7 @@
 <head></head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="Slice, pizza delivery app">
+<link rel="icon" type="image/png" href="images/logo-icon.png" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
@@ -14,15 +15,22 @@
 <script type="text/javascript" src="js/spin.js"></script>
 <script src="//cdn.optimizely.com/js/3441870232.js"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-72967680-1', 'auto');
-  ga('send', 'pageview');
-
+ga('create', 'UA-72967680-1', 'auto');
+ga('send', 'pageview');
 </script>
+
 <body>
     <div class="bg-img"></div>
     <div class="single-photo__gradient-overlay"></div>
@@ -92,8 +100,8 @@
                                     <p id="thankyou-text">
                                     </p>
                                     <p style="padding-top: 0px; padding-bottom: 11px;">Share to your friends and family:</p>
-                                    <div class="ssk-group ssk-lg" style="padding-bottom: 20px;">
-                                        <a href="" class="ssk ssk-facebook"></a>
+                                    <div class="ssk-group ssk-lg" data-url="http://sliceapp.co/" style="padding-bottom: 20px;">
+                                        <a href="" class="ssk ssk-facebook" data-url="http://sliceapp.co/"></a>
                                         <a href="" class="ssk ssk-twitter"></a>
                                         <a href="" class="ssk ssk-google-plus"></a>
                                     </div>
@@ -108,7 +116,11 @@
     <script>
     $(function() {
         // Social share plugin
-        SocialShareKit.init();
+        SocialShareKit.init({
+            selector: '.ssk',
+            url: 'http://sliceapp.co/',
+            text: 'Share text default',
+        });
 
         $("#submit").click(function(e) {
             e.preventDefault();
