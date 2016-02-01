@@ -321,6 +321,10 @@ body {
     pointer-events: visible;
 }
 
+.unclickable .unclickableMask{
+    background-image: url("images/logo-icon.png")!important;
+}
+
 @media (min-width: 768px) {
     .modal-container {
         margin: auto;
