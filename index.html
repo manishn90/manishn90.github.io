@@ -29,18 +29,6 @@
 
     ga('create', 'UA-72967680-1', 'auto');
     ga('send', 'pageview', '/', 'Homepage');
-
-
-    /* _optimizely_redirect=http://sliceapp.co/home */
-    var _optly = {
-        redir: document.createElement("a")
-    };
-    _optly.redir.href = "http://sliceapp.co/home";
-    _optly.cur = window.location.search;
-    if (_optly.cur) {
-        _optly.redir.search = _optly.redir.search ? _optly.cur + "&" + _optly.redir.search.slice(1) : _optly.cur;
-    }
-    window.location.replace(_optly.redir.href);
     </script>
 </head>
 
