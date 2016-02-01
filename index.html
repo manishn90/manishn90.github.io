@@ -119,9 +119,14 @@
     $(function() {
         // Social share plugin
         SocialShareKit.init({
-            selector: '.ssk',
+
+            selector: '.custom-parent .ssk',
             url: 'http://sliceapp.co/',
             text: 'Share text default',
+            facebook: {
+                image:'images/logo-icon.png'
+            }
+
         });
 
         // sending share events to Google
