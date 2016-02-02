@@ -44,6 +44,30 @@
     ga('create', 'UA-72967680-1', 'auto');
     ga('send', 'pageview', '/home', 'Homepage');
     </script>
+
+    <script type="text/javascript">
+    function timer5() {
+        ga('send', 'event', 'TimeOnPage', '0', '0-5 seconds', {
+            'nonInteraction': 1
+        });
+    }
+
+    function timer10() {
+        ga('send', 'event', 'TimeOnPage', '1', '6-10 seconds', {
+            'nonInteraction': 1
+        });
+    }
+
+    function timerMore() {
+        ga('send', 'event', 'TimeOnPage', '2', 'More than 10 seconds', {
+            'nonInteraction': 1
+        });
+    }
+
+    setTimeout(timer5, 5000);
+    setTimeout(timer10, 10000);
+    setTimeout(timerMore, 15000);
+    </script>
 </head>
 
 <body>
