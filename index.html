@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="css/ladda-themeless.min.css" type="text/css">
 
 
-    <meta property="og:site_name" content="Slice, pizza delivery apps">
+    <meta property="og:site_name" content="Slice, pizza delivery app">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Slice, pizza delivery app1">
-    <meta property="og:description" content="Slice, pizza delivery app2">
+    <meta property="og:title" content="Slice, pizza delivery app">
+    <meta property="og:description" content="Slice, pizza delivery app">
     <meta property="og:url" content="http://sliceapp.co/">
     <meta property="og:image" content="http://sliceapp.co/images/logo-icon.png">
     <meta property="og:image:width" content="200">
@@ -128,7 +128,9 @@
     <script>
     $(function() {
         // Social share plugin
-        SocialShareKit.init();
+        SocialShareKit.init({
+            url:'http://sliceapp.co/'
+        });
 
         // sending share events to Google
         $('.ga-share-facebook').click(function() {
