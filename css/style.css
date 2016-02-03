@@ -12,8 +12,10 @@ body {
     color: #fff;
     font-family: 'ProximaNova';
 }
-.modal-body{
-    padding: 0
+
+.modal-body {
+    padding: 0;
+height: 100%;
 }
 
 .bg-img {
@@ -25,7 +27,7 @@ body {
     min-width: 1024px;
     width: 100%;
     height: auto;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
 }
@@ -65,6 +67,9 @@ body {
     color: #fff;
     border-color: #000;
 }
+.container{
+    height: 100%;
+}
 
 .container h2 {
     text-transform: capitalize;
@@ -94,7 +99,7 @@ body {
 .single-photo__gradient-overlay {
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: absolute;
     background: transparent;
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.7) 100%);
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.7) 100%);
@@ -103,6 +108,7 @@ body {
 .modal-dialog {
     margin: 0;
     width: 100%;
+    height: 100%;
 }
 
 .modal-content {
@@ -321,7 +327,6 @@ body {
     pointer-events: visible;
 }
 
-
 @media (min-width: 768px) {
     .modal-container {
         margin: auto;
@@ -330,7 +335,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .thanks-box p{
+    .thanks-box p {
         width: 100%;
     }
     .thanks-box .box {
@@ -350,4 +355,10 @@ body {
     .modal-container p {
         font-size: 20px;
     }
+}
+
+.intro {
+    width: 100%;
+    height: 100%;
+    text-align: initial
 }

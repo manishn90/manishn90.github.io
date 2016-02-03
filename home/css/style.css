@@ -444,4 +444,61 @@ button.envelope-2 span {
         font-size: 30px;
         padding: 1em 0;
     }
+    #section1 h1{
+        font-size: 22px;
+        line-height: normal;
+    }
+
+    .iphone-bg{
+        width: 80%!important;
+    }
+}
+
+#section1 h1 {
+    color: #000;
+    letter-spacing: 0px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.intro {
+    text-align: center;
+}
+
+.iphone-box {
+    padding: 50px 0;
+    width: 70%;
+    margin: auto;
+}
+
+.iphone-bg {
+    width: 100%;
+    margin: auto;
+}
+
+.iphone-bg img {
+    width: 100%;
+}
+
+.iphone-line {
+    width: 30px;
+    border-color: #f6cc4c;
+    border-width: 2px;
+    margin: 15px auto!important;
+}
+
+.iphone-detail {
+    color: #000;
+    margin-top: 20px;
+}
+
+.iphone-detail p:nth-child(1) {
+    font-size: 14px;
+    line-height: 3px;
+    font-weight: bold;
+}
+
+.iphone-detail p:nth-child(2) {
+    font-size: 12px;
+    opacity: 0.7
 }
