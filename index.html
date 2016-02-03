@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
     <link rel="stylesheet" href="css/ladda-themeless.min.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css">
+
+
     <meta property="og:title" content="Slice, pizza delivery app">
     <meta property="og:description" content="Slice app is the easiest way to order gourmet pizza to Jakarta's cbd. Pizza is just a few taps away.">
     <meta property="og:site_name" content="Slice, pizza delivery app">
@@ -22,12 +25,17 @@
     <meta name="twitter:title" content="Slice, pizza delivery app">
     <meta name="twitter:description" content="Slice app is the easiest way to order gourmet pizza to Jakarta's cbd. Pizza is just a few taps away.">
     <meta name="twitter:image" content="http://sliceapp.co/images/logo-icon.png">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="js/social-share-kit.js"></script>
     <script type="text/javascript" src="js/ladda.js"></script>
     <script type="text/javascript" src="js/spin.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+
+
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -157,7 +165,28 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="iphone-hand">
-                                <img src="images/iphone1.png">
+                                <ul class="single-item">
+                                    <li>
+                                        <div class="single-box">
+                                            <img src="images/menu/main-menu.jpg">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-box">
+                                            <img src="images/menu/sample-for-mockup2.jpg">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-box">
+                                            <img src="images/menu/checkout.jpg">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-box">
+                                            <img src="images/menu/summary.jpg">
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -167,6 +196,11 @@
     </div>
     <script type="text/javascript">
     $(function() {
+        $('.single-item').slick({
+            arrows: false,
+            autoplay:true,
+            autoplaySpeed:1500
+        });
         // Social share plugin
         SocialShareKit.init({
             url: 'http://sliceapp.co/'

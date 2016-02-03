@@ -359,9 +359,7 @@ body {
     .modal-container p {
         font-size: 20px;
     }
-    .iphone-hand {
-        width: 80%!important;
-    }
+  
     .iphone-text {
         margin: 30px 0;
         padding: 0!important;
@@ -375,8 +373,7 @@ body {
     .iphone-text h1 {
         line-height: 20px!important;
     }
-
-    .iphone-text p{
+    .iphone-text p {
         line-height: 20px!important;
         font-size: 13px!important;
     }
@@ -403,8 +400,13 @@ body {
 }
 
 .iphone-hand {
-    width: 400px;
-    margin: auto;
+    margin: 52px auto;
+    background-image: url('../images/mockup iphonewithoutshadow.png');
+    background-position: center;
+    background-size: cover;
+    width: 280px;
+    height: 573px;
+    background-repeat: no-repeat;
 }
 
 .iphone-hand img {
@@ -438,4 +440,25 @@ body {
 .iphone-text h1:nth-child(2) {
     font-size: 80px;
     color: #f6cc4c
+}
+
+ul.single-item {
+    padding: 0;
+    width: 245px;
+    position: relative;
+    left: 18px;
+}
+
+ul.single-item li {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 280px;
+    height: 570px;
+}
+
+.single-box {
+    width: 247px;
+    position: relative;
+    top: 67px;
 }
