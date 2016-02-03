@@ -377,6 +377,10 @@ body {
         line-height: 20px!important;
         font-size: 13px!important;
     }
+
+    #fullpage{
+        overflow: hidden;
+    }
 }
 
 #section1 {
