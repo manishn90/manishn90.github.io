@@ -34,7 +34,6 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 100%;
-    min-width: 1024px;
     width: 100%;
     height: auto;
     position: fixed;
@@ -45,7 +44,6 @@ body {
 .bg-color {
     background-color: #f6cc4c;
     min-height: 100%;
-    min-width: 1024px;
     width: 100%;
     height: auto;
     position: fixed;
@@ -473,6 +471,9 @@ button.envelope-2 span {
 }
 
 @media (max-width: 992px) {
+    html,body{
+        overflow-x:hidden!important;
+    }
     .iphone-detail {
         min-height: 79px!important;
     }
