@@ -23,6 +23,10 @@
     src: url('../fonts/avenir/Avenir-Light.otf');
 }
 
+html,body, .container{
+    height: 100%;
+}
+
 body {
     color: #fff;
     font-family: 'ProximaNova';
