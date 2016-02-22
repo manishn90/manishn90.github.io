@@ -94,7 +94,7 @@ body {
 }
 
 .container p {
-    font-size: 20px;
+    font-size: 16px;
     background: #000;
     display: inline;
     box-shadow: 11px 0 0 #000000, -11px 0 0 #000000;
@@ -378,6 +378,10 @@ body {
     #section1 {
         padding: 20px;
     }
+
+    #section1 h1{
+        line-height: normal!important;
+    }
     .iphone-box {
         width: 100%!important;
         padding: 0!important
@@ -388,26 +392,16 @@ body {
     #iphone-dekstop {
         display: none;
     }
-
-     .iphone-detail {
+    .iphone-detail {
         min-height: 50px!important;
     }
-   
 }
 
-@media (max-width: 992px){
-    html,body{
-        overflow-x:hidden;
-    }
-}
-
-@media (max-width: 992px) and (min-width: 768px ) {
+@media (max-width: 992px) and (min-width: 768px) {
     .iphone-detail {
-        min-height: 79px!important;
+        min-height: 133px!important;
     }
-
 }
-
 
 @media (max-width: 1335px) {
     .iphone-detail {
@@ -416,14 +410,10 @@ body {
     }
 }
 
-
-
 .single-item {
     padding: 0;
     margin: auto;
 }
-
-
 
 .single-item li img {
     width: 100%;
@@ -475,6 +465,7 @@ body {
     color: #000;
     margin: 25px 0;
     text-align: center;
+    min-height: 90px;
 }
 
 .iphone-detail p:nth-child(1) {

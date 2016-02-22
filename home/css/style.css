@@ -23,10 +23,6 @@
     src: url('../fonts/avenir/Avenir-Light.otf');
 }
 
-html,body, .container{
-    height: 100%;
-}
-
 body {
     color: #fff;
     font-family: 'ProximaNova';
@@ -38,7 +34,6 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 100%;
-    min-width: 1024px;
     width: 100%;
     height: auto;
     position: fixed;
@@ -49,7 +44,6 @@ body {
 .bg-color {
     background-color: #f6cc4c;
     min-height: 100%;
-    min-width: 1024px;
     width: 100%;
     height: auto;
     position: fixed;
@@ -291,6 +285,8 @@ button.envelope-2 span {
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 0, 0);
     display: none;
+    position: absolute;
+    bottom: 0;
 }
 
 .success-box.open,
@@ -451,7 +447,7 @@ button.envelope-2 span {
     }
     #section1 h1 {
         font-size: 22px;
-        line-height: normal;
+        line-height: normal!important;
     }
     .iphone-bg {
         width: 280px!important;
@@ -459,7 +455,6 @@ button.envelope-2 span {
     .iphone-detail {
         min-height: 50px!important
     }
-   
     #iphone-dekstop {
         display: none;
     }
@@ -470,28 +465,29 @@ button.envelope-2 span {
     .iphone-text {
         margin: 40px 0;
     }
+    #section1 {
+        padding: 0 10px 43px 10px;
+    }
+}
 
-    #section1{
-        padding-bottom: 43px;
+@media (max-width: 992px) and (min-width: 768px) {
+    .iphone-detail {
+        min-height: 133px!important;
     }
 }
 
 @media (max-width: 992px) {
-    .iphone-detail {
-        min-height: 79px!important;
+    html,
+    body {
+        overflow-x: hidden!important;
     }
     .iphone-detail p:nth-child(1) {
         line-height: normal!important;
-    }
-
-    html,body{
-        overflow-x:hidden;
     }
 }
 
 @media (max-width: 1335px) {
     .iphone-detail {
-        min-height: 50px;
         margin-bottom: 0!important
     }
 }
@@ -540,6 +536,7 @@ button.envelope-2 span {
 .iphone-detail {
     color: #000;
     margin: 20px 0;
+    min-height: 90px;
 }
 
 .iphone-detail p:nth-child(1) {
@@ -566,10 +563,7 @@ button.envelope-2 span {
     font-family: 'avenir_black'
 }
 
-
-
 .single-item {
     padding: 0;
     margin: auto;
 }
-
